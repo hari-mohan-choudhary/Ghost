@@ -12,8 +12,17 @@ config = {
     // When running Ghost in the wild, use the production environment.
     // Configure your URL and mail settings here
     production: {
-        url: 'http://my-ghost-blog.com',
-        mail: {},
+        url: 'http://blog.synhealth.com',
+          mail: {
+              transport: 'SMTP',
+              options: {
+                  service: 'Mailgun',
+                  auth: {
+                      user: '', // mailgun username
+                      pass: ''  // mailgun password
+                  }
+              }
+         },
         database: {
             client: 'sqlite3',
             connection: {
@@ -24,7 +33,7 @@ config = {
 
         server: {
             host: '127.0.0.1',
-            port: '2368'
+            port: '1337'
         }
     },
 
